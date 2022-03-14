@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="RSSReader_Mobile.Views.StartPage" x:Name="startPage"
+             xmlns:local="clr-namespace:RSSReader_Mobile">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="refresh.png" Clicked="Refresh_Click" Order="Primary"/>
+        <ToolbarItem IconImageSource="bell.png" Clicked="ShowNotif_Click" Order="Primary"/>
+        <ToolbarItem Text="Adicionar feed" Clicked="AddFeed_Click" Order="Secondary"/>
+        <ToolbarItem Text="Editar feed" Clicked="EditFeed_Click" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".2*"/>
+        </Grid.RowDefinitions>
+        <Frame BackgroundColor="#2196F3" Grid.Row="0">
+            <Label Text="{Binding SelectedFeed.Feed.Title.Text}" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+        </Frame>
+        <ListView x:Name="LvItems" Grid.Row="1" Margin="10,5,10,10" ItemTapped="ShowItem_Click"
+                  ItemsSource="{Binding SelectedFeed.RSSItems}" SelectedItem="{Binding SelectedItem}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Title}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="Center">
+            <CheckBox IsChecked="{Binding NotRead}" CheckedChanged="CheckBox_CheckedChanged"/>
+            <Label Text="Não lidos" VerticalOptions="Center" FontSize="20"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

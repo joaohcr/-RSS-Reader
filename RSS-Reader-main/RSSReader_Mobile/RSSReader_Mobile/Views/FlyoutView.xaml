@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xp="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="RSSReader_Mobile.Views.FlyoutView"
+             Title="Flyout">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".15*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".5*"/>
+        </Grid.ColumnDefinitions>
+        <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#2196F3">
+            <Label Grid.Row="0" Grid.Column="0" Text="Categorias" TextColor="White" FontSize="Large" VerticalTextAlignment="Center"/>
+        </Frame>
+        <Button Grid.Row="0" Grid.Column="1" Margin="0,20,45,20" Text="+" FontSize="25" CornerRadius="100" Clicked="AddCategory_Click"/>
+        <CollectionView Grid.Row="1" Grid.ColumnSpan="2" Margin="5,0,5,0" ItemsSource="{Binding Model.Categories}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <xp:Expander IsExpanded="True">
+                        <xp:Expander.Header>
+                            <Label Text="{Binding Name}" FontSize="20" Margin="5,0,5,0"/>
+                        </xp:Expander.Header>
+                        <StackLayout BindableLayout.ItemsSource="{Binding Feeds}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Button Text="{Binding Feed.Title.Text}" FontSize="16" Clicked="ShowFeed_Click"/>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </xp:Expander>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

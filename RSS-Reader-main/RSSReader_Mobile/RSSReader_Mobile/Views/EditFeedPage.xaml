@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RSSReader_Mobile.Views.EditFeedPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".05*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".4*"/>
+                <ColumnDefinition Width=".5*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Frame BackgroundColor="#2196F3" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Text="Editar Feed" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="30"/>
+            </Frame>
+            <Picker Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,0,20,0"
+                ItemsSource="{Binding Model.Categories}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedCategory}"/>
+            <Picker Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,0,20,0"
+                    ItemsSource="{Binding SelectedCategory.Feeds}" 
+                    ItemDisplayBinding="{Binding Feed.Title.Text}" 
+                    SelectedItem="{Binding SelectedFeed}">
+            </Picker>
+            <Label Grid.Row="3" Grid.Column="0" Text="Palavras-chave:" FontSize="Medium" Margin="20,20,0,0"/>
+            <Entry Grid.Row="3" Grid.Column="1" Margin="0,0,20,0" 
+                   Text="{Binding KeywordTextBox}" Placeholder="Introduza keywords" VerticalOptions="Center"/>
+            <ListView Grid.Row="4" Grid.RowSpan="2" Grid.Column="0" Margin="0,20,20,20"
+                ItemsSource="{Binding Keywords}" SelectedItem="{Binding SelectedKeyword}"/>
+            <Button Grid.Row="4" Grid.Column="1" Text="➕" FontSize="25" Margin="70,10,70,10" CornerRadius="50" Clicked="AddKeyword_Click"/>
+            <Button Grid.Row="5" Grid.Column="1" Text="❌" FontSize="25" Margin="70,10,70,10" CornerRadius="50" Clicked="DelKeyword_Click"/>
+            <Button Grid.Row="6" Grid.Column="0" Text="Guardar" CornerRadius="50" Margin="20,0,20,0" Clicked="SaveFeed_Click"/>
+            <Button Grid.Row="6" Grid.Column="1" Text="Remover" CornerRadius="50" Margin="40,0,40,0" Clicked="DelFeed_Click"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

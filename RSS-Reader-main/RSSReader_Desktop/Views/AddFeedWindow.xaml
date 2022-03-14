@@ -1,0 +1,31 @@
+﻿<Window x:Class="RSSReader_Desktop.Views.AddFeedWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Adicionar Feed" Height="405" Width="650">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="46,57,0,0" Text="Endereço:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox Style="{DynamicResource RoundTextBox}" Text="{Binding FeedUri}" Background="Transparent" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="128,52,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="467" Foreground="#FF767676" Height="33"/>
+        <TextBlock Style="{DynamicResource HintFeed}" IsHitTestVisible="False" Text="Introduza o url de um feed" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="132,61,0,0" Foreground="DarkGray"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Text="Categoria:"/>
+        <ComboBox ItemsSource="{Binding Model.Categories}" SelectedItem="{Binding SelectedCategory}" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="130,114,0,0" VerticalAlignment="Top" Width="243" Height="33"/>
+        <Button Content="Criar nova categoria" HorizontalAlignment="Left" Margin="130,159,0,0" VerticalAlignment="Top" Width="122" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF0083FF" Click="AddCategory_Click"/>
+        <Button Style="{DynamicResource RoundButton}" Content="Adicionar" HorizontalAlignment="Left" Margin="132,310,0,0" VerticalAlignment="Top" Height="40" Width="111" Click="AddFeed_Click"/>
+        <Button Style="{DynamicResource RoundButton}" Content="Cancelar" HorizontalAlignment="Left" Margin="454,310,0,0" VerticalAlignment="Top" Height="40" Width="112" Click="Cancel_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,230,0,0" FontSize="14" TextWrapping="Wrap" VerticalAlignment="Top" Text="Palavras-chave:"/>
+        <TextBox Style="{DynamicResource RoundTextBox}" Text="{Binding Keyword}" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="161,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="33"/>
+        <Button Style="{DynamicResource RoundButton}" Content="Inserir" HorizontalAlignment="Left" Margin="319,223,0,0" VerticalAlignment="Top" Height="33" Width="54" Click="AddKeyword_Click"/>
+        <ListBox Margin="420,114,55,102" ItemsSource="{Binding Keywords}">
+            <ListBox.Resources>
+                <ContextMenu x:Key="MyElementMenu">
+                    <MenuItem Header="Remover" Click="BtRemover_Click"/>
+                </ContextMenu>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="ContextMenu" Value="{StaticResource MyElementMenu}"/>
+                </Style>
+            </ListBox.Resources>
+        </ListBox>
+    </Grid>
+</Window>

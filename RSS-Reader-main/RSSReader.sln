@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedResources", "SharedResources\SharedResources.csproj", "{BBD599E1-4B9E-4D6F-959A-0431054B5859}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSSReader_Desktop", "RSSReader_Desktop\RSSReader_Desktop.csproj", "{ECAB88C2-E109-4F73-8253-A87ED477B537}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSSReader_Mobile.Android", "RSSReader_Mobile\RSSReader_Mobile.Android\RSSReader_Mobile.Android.csproj", "{68501420-26D8-4E47-A386-47FC3DA07AB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSSReader_Mobile", "RSSReader_Mobile\RSSReader_Mobile\RSSReader_Mobile.csproj", "{F1DFEBD7-0B58-4479-81FC-567B414269F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBD599E1-4B9E-4D6F-959A-0431054B5859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD599E1-4B9E-4D6F-959A-0431054B5859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD599E1-4B9E-4D6F-959A-0431054B5859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD599E1-4B9E-4D6F-959A-0431054B5859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECAB88C2-E109-4F73-8253-A87ED477B537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECAB88C2-E109-4F73-8253-A87ED477B537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECAB88C2-E109-4F73-8253-A87ED477B537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECAB88C2-E109-4F73-8253-A87ED477B537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68501420-26D8-4E47-A386-47FC3DA07AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68501420-26D8-4E47-A386-47FC3DA07AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68501420-26D8-4E47-A386-47FC3DA07AB4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{68501420-26D8-4E47-A386-47FC3DA07AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68501420-26D8-4E47-A386-47FC3DA07AB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68501420-26D8-4E47-A386-47FC3DA07AB4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F1DFEBD7-0B58-4479-81FC-567B414269F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1DFEBD7-0B58-4479-81FC-567B414269F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1DFEBD7-0B58-4479-81FC-567B414269F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1DFEBD7-0B58-4479-81FC-567B414269F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B5D47E2-5851-4DAE-8CFA-7B4642634214}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>rss.ico</ApplicationIcon>
+    <AssemblyName>RSS Reader</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="arrow.png" />
+    <None Remove="bell.png" />
+    <None Remove="Views\refresh.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SharedResources\SharedResources.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\bell.png" />
+    <Resource Include="Resources\refresh.png" />
+  </ItemGroup>
+
+</Project>

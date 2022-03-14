@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RSSReader_Mobile.Views.ShowItemPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".1*"/>
+                <RowDefinition Height=".4*"/>
+                <RowDefinition Height=".3*"/>
+                <RowDefinition Height=".1*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="{Binding RSSItem.Title}" FontSize="Large" FontAttributes="Bold" VerticalTextAlignment="Center" Margin="10,0,10,0"/>
+            <Label Grid.Row="1" Text="{Binding RSSItem.PubDate}" FontSize="18" VerticalTextAlignment="Center" Margin="10,0,10,0"/>
+            <Image Grid.Row="2" Source="{Binding RSSItem.ImageSource}"/>
+            <ScrollView Grid.Row="3" Margin="10,0,10,0">
+                <Label Grid.Row="3" Text="{Binding RSSItem.Summary}" FontSize="18"/>
+            </ScrollView>
+            <Button Grid.Row="4" Text="Abrir no browser" Clicked="OpenInBrowser_Click"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
